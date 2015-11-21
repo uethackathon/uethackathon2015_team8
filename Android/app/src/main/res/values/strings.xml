@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">J4F</string>
-
-
+    <string name="app_name">Stubber</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -17,8 +15,8 @@
     <string name="prompt_fullname">Fullname</string>
     <string name="prompt_username">Username</string>
     <string name="prompt_password">Password</string>
-    <string name="action_sign_in">SIGNIN</string>
-    <string name="action_sign_up">SIGNUP</string>
+    <string name="action_sign_in">SIGN IN</string>
+    <string name="action_sign_up">SIGN UP</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
@@ -33,4 +31,6 @@
     <string name="tab_tutors">Offers</string>
     <string name="title_activity_question_details">QuestionDetailsActivity</string>
     <string name="title_activity_post_offer">PostOfferActivity</string>
+    <string name="title_activity_question_detail">QuestionDetailActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>
