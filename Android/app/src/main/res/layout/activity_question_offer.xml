@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.j4f.activities.PostOfferActivity">
+    tools:context="com.j4f.activities.PostQuestionActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,9 +25,9 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
         </android.support.design.widget.AppBarLayout>
 
-        <include layout="@layout/content_post_offer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+        <include layout="@layout/post_question_main" />
+
+        <include layout="@layout/content_post_offer" />
     </LinearLayout>
 
 

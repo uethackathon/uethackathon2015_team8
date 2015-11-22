@@ -21,6 +21,7 @@ import com.j4f.cores.CoreActivity;
 import com.j4f.cores.CoreFragment;
 import com.j4f.models.Offer;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
+import com.marshalchen.ultimaterecyclerview.ui.DividerItemDecoration;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,6 +61,7 @@ public class OffersFragment extends CoreFragment {
         offersList = new ArrayList<Offer>();
         offerAdapter = new OfferAdapter(offersList, mActivity);
         offerRecyclerView.setHasFixedSize(true);
+        offerRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
         offerRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
         offerRecyclerView.setAdapter(offerAdapter);
         offerRecyclerView.enableLoadmore();
@@ -76,7 +78,9 @@ public class OffersFragment extends CoreFragment {
             @Override
             public void onRefresh() {
                 offersList = new ArrayList<Offer>();
+                offerAdapter = new OfferAdapter(offersList, mActivity);
                 offerAdapter.notifyDataSetChanged();
+                offerRecyclerView.setAdapter(offerAdapter);
                 mMaxOffer = -1;
                 mCurrentOfferPage = 1;
                 mLimit = -1;
@@ -97,8 +101,8 @@ public class OffersFragment extends CoreFragment {
                             if(status.equals("ok")) {
                                 if(mMaxOffer == -1) {
                                     mMaxOffer = response.getInt("count");
-                                    int d = mMaxOffer / Configs.CATEGORY_PAGE_LIMIT;
-                                    mLimit = mMaxOffer % Configs.CATEGORY_PAGE_LIMIT == 0 ? d : d + 1;
+                                    int d = mMaxOffer / Configs.OFFER_PAGE_LIMIT;
+                                    mLimit = mMaxOffer % Configs.OFFER_PAGE_LIMIT == 0 ? d : d + 1;
                                 }
                                 JSONArray ja = response.getJSONArray("data");
                                 for (int i = 0; i < ja.length(); i++) {
